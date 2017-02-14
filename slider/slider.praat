@@ -1,6 +1,6 @@
 # variables
 
-path$ = "/Users/tim/GitHub/MMAT/slider/"
+path$ = ""
 screen_width = 100
 screen_height = 100
 slider_width = 40
