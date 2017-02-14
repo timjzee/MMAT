@@ -1,0 +1,5 @@
+- laten zien waar de vorige keuze op de schaal was
+- zorgen dat eerste paar trials niet onder de 0.8 kunnen.
+- knop voor 1 en 2; knop voor 2 en 3; als je op de knop drukt alleen 3 laten horen
+- in instructie dat 3e stimulus elke keer anders is
+- bimodale verdeling van erb waarde van derde stimulus ipv huidige systeem
