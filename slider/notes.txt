@@ -3,3 +3,9 @@
 - knop voor 1 en 2; knop voor 2 en 3; als je op de knop drukt alleen 3 laten horen
 - in instructie dat 3e stimulus elke keer anders is
 - bimodale verdeling van erb waarde van derde stimulus ipv huidige systeem
+
+- verschillende knoppenindelingen maken:
+    - alleen slider, met geluiden in omgekeerde volgorde
+    - toetsenbord shortcuts ipv van knoppen
+    - per versie een knop / toets
+- Geef knoppen verschillende kleurtjes
