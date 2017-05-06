@@ -41,11 +41,11 @@ endproc
 
 # Frame
 
-Read from file: path$ + "/test_stimuli/" + stimulus_to_play$ + ".Manipulation"
+Read from file: path$ + "/stimuli/" + stimulus_to_play$ + ".Manipulation"
+shift_of_a = -0.4
+shift_of_b = 0.8
 
 if version_to_play$ = "a_and_b"
-    shift_of_a = -0.4
-    shift_of_b = 0.8
     @shiftStimulus: stimulus_to_play$, shift_of_a
     selectObject: "Sound " + shiftStimulus.new_name$
     Rename: stimulus_to_play$ + "_A"
@@ -59,8 +59,21 @@ if version_to_play$ = "a_and_b"
     Play
     selectObject: "Sound " + stimulus_to_play$ + "_B"
     Play
+elsif version_to_play$ = "a_and_c"
+    @shiftStimulus: stimulus_to_play$, shift_of_a
+    selectObject: "Sound " + shiftStimulus.new_name$
+    Rename: stimulus_to_play$ + "_A"
+    @shiftStimulus: stimulus_to_play$, shift_of_c
+    selectObject: "Sound " + shiftStimulus.new_name$
+    Rename: stimulus_to_play$ + "_C"
+    Create Sound from formula: "silence", 1, 0, 0.5, 44100, "0"
+    selectObject: "Sound " + stimulus_to_play$ + "_A"
+    Play
+    selectObject: "Sound " + "silence"
+    Play
+    selectObject: "Sound " + stimulus_to_play$ + "_C"
+    Play
 elsif version_to_play$ = "b_and_c"
-    shift_of_b = 0.8
     @shiftStimulus: stimulus_to_play$, shift_of_b
     selectObject: "Sound " + shiftStimulus.new_name$
     Rename: stimulus_to_play$ + "_B"
@@ -77,5 +90,83 @@ elsif version_to_play$ = "b_and_c"
 elsif version_to_play$ = "c"
     @shiftStimulus: stimulus_to_play$, shift_of_c
     selectObject: "Sound " + shiftStimulus.new_name$
+    Play
+elsif version_to_play$ = "a"
+    @shiftStimulus: stimulus_to_play$, shift_of_a
+    selectObject: "Sound " + shiftStimulus.new_name$
+    Play
+elsif version_to_play$ = "b"
+    @shiftStimulus: stimulus_to_play$, shift_of_b
+    selectObject: "Sound " + shiftStimulus.new_name$
+    Play
+elsif version_to_play$ = "c_b_a"
+    @shiftStimulus: stimulus_to_play$, shift_of_c
+    selectObject: "Sound " + shiftStimulus.new_name$
+    Rename: stimulus_to_play$ + "_C"
+    @shiftStimulus: stimulus_to_play$, shift_of_b
+    selectObject: "Sound " + shiftStimulus.new_name$
+    Rename: stimulus_to_play$ + "_B"
+    @shiftStimulus: stimulus_to_play$, shift_of_a
+    selectObject: "Sound " + shiftStimulus.new_name$
+    Rename: stimulus_to_play$ + "_A"
+    Create Sound from formula: "silence", 1, 0, 0.5, 44100, "0"
+    selectObject: "Sound " + stimulus_to_play$ + "_C"
+    Play
+    selectObject: "Sound " + "silence"
+    Play
+    selectObject: "Sound " + stimulus_to_play$ + "_B"
+    Play
+    selectObject: "Sound " + "silence"
+    Play
+    selectObject: "Sound " + stimulus_to_play$ + "_A"
+    Play
+elsif version_to_play$ = "a_b_c"
+    @shiftStimulus: stimulus_to_play$, shift_of_a
+    selectObject: "Sound " + shiftStimulus.new_name$
+    Rename: stimulus_to_play$ + "_A"
+    @shiftStimulus: stimulus_to_play$, shift_of_b
+    selectObject: "Sound " + shiftStimulus.new_name$
+    Rename: stimulus_to_play$ + "_B"
+    @shiftStimulus: stimulus_to_play$, shift_of_c
+    selectObject: "Sound " + shiftStimulus.new_name$
+    Rename: stimulus_to_play$ + "_C"
+    Create Sound from formula: "silence", 1, 0, 0.5, 44100, "0"
+    selectObject: "Sound " + stimulus_to_play$ + "_A"
+    Play
+    selectObject: "Sound " + "silence"
+    Play
+    selectObject: "Sound " + stimulus_to_play$ + "_B"
+    Play
+    selectObject: "Sound " + "silence"
+    Play
+    selectObject: "Sound " + stimulus_to_play$ + "_C"
+    Play
+elsif version_to_play$ = "c_and_b"
+    @shiftStimulus: stimulus_to_play$, shift_of_b
+    selectObject: "Sound " + shiftStimulus.new_name$
+    Rename: stimulus_to_play$ + "_B"
+    @shiftStimulus: stimulus_to_play$, shift_of_c
+    selectObject: "Sound " + shiftStimulus.new_name$
+    Rename: stimulus_to_play$ + "_C"
+    Create Sound from formula: "silence", 1, 0, 0.5, 44100, "0"
+    selectObject: "Sound " + stimulus_to_play$ + "_C"
+    Play
+    selectObject: "Sound " + "silence"
+    Play
+    selectObject: "Sound " + stimulus_to_play$ + "_B"
+    Play
+elsif version_to_play$ = "b_and_a"
+    @shiftStimulus: stimulus_to_play$, shift_of_a
+    selectObject: "Sound " + shiftStimulus.new_name$
+    Rename: stimulus_to_play$ + "_A"
+    @shiftStimulus: stimulus_to_play$, shift_of_b
+    selectObject: "Sound " + shiftStimulus.new_name$
+    Rename: stimulus_to_play$ + "_B"
+    Create Sound from formula: "silence", 1, 0, 0.5, 44100, "0"
+    selectObject: "Sound " + stimulus_to_play$ + "_B"
+    Play
+    selectObject: "Sound " + "silence"
+    Play
+    selectObject: "Sound " + stimulus_to_play$ + "_A"
     Play
 endif
